@@ -2,36 +2,36 @@ package es.iesmz.tests;
 
 public class DiasLluvia {
 
-    private boolean [][] haLLovido;
+    private boolean [][] haLlovido;
 
     public DiasLluvia (){
-        this.haLLovido = new boolean[12][31];
+        this.haLlovido = new boolean[12][31];
     }
 
     public boolean registroDia (int dia, int mes, boolean lluvia){
         if (mes >= 0 && mes <= 11){
             if (mes == 1 && dia >= 0 && dia <= 27){
-                haLLovido[mes][dia] = lluvia;
+                haLlovido[mes][dia] = lluvia;
                 return true;
             } else if (mes % 2 == 0 && dia >= 0 && dia <= 30){
-                haLLovido[mes][dia] = lluvia;
+                haLlovido[mes][dia] = lluvia;
                 return true;
             } else if (dia >= 0 && dia <= 29){
-                haLLovido[mes][dia] = lluvia;
+                haLlovido[mes][dia] = lluvia;
                 return true;
             }
         } return false;
     }
 
     public boolean consultarDia (int dia, int mes){
-        return haLLovido[dia][mes];
+        return haLlovido[dia][mes];
     }
 
     public int contarDiasLLuviosos () {
         int numDias = 0;
-        for (int i = 0; i < haLLovido.length; i++) {
-            for (int j = 0; j < haLLovido[i].length; j++) {
-                if (haLLovido[i][j]) numDias++;
+        for (int i = 0; i < haLlovido.length; i++) {
+            for (int j = 0; j < haLlovido[i].length; j++) {
+                if (haLlovido[i][j]) numDias++;
             }
         } return numDias;
     }
@@ -39,9 +39,9 @@ public class DiasLluvia {
     public int trimestreLluvioso() {
         int[] trimestreDiasLluviosos = new int[4];
 
-        for (int i = 0; i < haLLovido.length; i++) {
-            for (int j = 0; j < haLLovido[i].length; j++) {
-                if (haLLovido[i][j]) {
+        for (int i = 0; i < haLlovido.length; i++) {
+            for (int j = 0; j < haLlovido[i].length; j++) {
+                if (haLlovido[i][j]) {
                     if (j >= 0 && j <= 2) {
                         trimestreDiasLluviosos[0]++;
                     } else if (j >= 3 && j <= 5) {
@@ -69,9 +69,9 @@ public class DiasLluvia {
     }
 
     public int primerDiaLluvia() {
-        for (int i = 0; i < haLLovido.length; i++) {
-            for (int j = 0; j < haLLovido[i].length; j++) {
-                if (haLLovido[i][j]) {
+        for (int i = 0; i < haLlovido.length; i++) {
+            for (int j = 0; j < haLlovido[i].length; j++) {
+                if (haLlovido[i][j]) {
                     return j + i * 31 + 1;
                 }
             }
