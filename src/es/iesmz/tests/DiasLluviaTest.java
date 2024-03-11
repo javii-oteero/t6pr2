@@ -20,5 +20,29 @@ public class DiasLluviaTest {
         assertFalse(diasLluvia.registroDia(20, 8, false));
     }
 
+    @Test
+    public void testConsultarDia() {
+        DiasLluvia diasLluvia = new DiasLluvia();
+        diasLluvia.registroDia(5, 0, true);
+        assertTrue(diasLluvia.consultarDia(5, 0));
+        assertFalse(diasLluvia.consultarDia(10, 0));
+    }
+
+    @Test
+    public void testContarDiasLLuviosos() {
+        DiasLluvia diasLluvia = new DiasLluvia();
+        diasLluvia.registroDia(3, 2, true);
+        diasLluvia.registroDia(8, 5, true);
+        assertEquals(2, diasLluvia.contarDiasLLuviosos());
+    }
+
+    @Test
+    public void testContarDiasLLuviososNotEquals() {
+        DiasLluvia diasLluvia = new DiasLluvia();
+        diasLluvia.registroDia(2, 1, true);
+        diasLluvia.registroDia(12, 4, true);
+        assertFalse(1 == diasLluvia.contarDiasLLuviosos());
+    }
+
 
 }
