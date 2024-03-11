@@ -44,5 +44,21 @@ public class DiasLluviaTest {
         assertFalse(1 == diasLluvia.contarDiasLLuviosos());
     }
 
+    @Test
+    public void testPrimerDiaLluvia() {
+        DiasLluvia diasLluvia = new DiasLluvia();
+        diasLluvia.registroDia(8, 0, true);
+        diasLluvia.registroDia(10, 1, true);
+        assertEquals(9, diasLluvia.primerDiaLluvia());
+    }
+
+    @Test
+    public void testPrimerDiaLluviaNotEquals() {
+        DiasLluvia diasLluvia = new DiasLluvia();
+        diasLluvia.registroDia(3, 4, true);
+        diasLluvia.registroDia(25, 7, true);
+        assertFalse(20 == diasLluvia.primerDiaLluvia());
+    }
+
 
 }
