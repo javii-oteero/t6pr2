@@ -26,4 +26,13 @@ public class DiasLluvia {
     public boolean consultarDia (int dia, int mes){
         return haLLovido[dia][mes];
     }
+
+    public int contarDiasLLuviosos () {
+        int numDias = 0;
+        for (int i = 0; i < haLLovido.length; i++) {
+            for (int j = 0; j < haLLovido[i].length; j++) {
+                if (haLLovido[i][j]) numDias++;
+            }
+        } return numDias;
+    }
 }
