@@ -23,8 +23,12 @@ public class DiasLluvia {
         } return false;
     }
 
-    public boolean consultarDia (int dia, int mes){
-        return haLlovido[dia][mes];
+    public boolean consultarDia (int mes, int dia){
+        try {
+            return haLlovido[mes][dia];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return false;
+        }
     }
 
     public int contarDiasLLuviosos () {
