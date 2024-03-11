@@ -22,4 +22,8 @@ public class DiasLluvia {
             }
         } return false;
     }
+
+    public boolean consultarDia (int dia, int mes){
+        return haLLovido[dia][mes];
+    }
 }
